@@ -1,0 +1,341 @@
+/* General styles for the body and links */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none; /* Removes underline from links */
+    color: #007bff; /* Custom color for links */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0; /* Adjust padding as needed */
+    position: fixed; /* Fixes the header in place */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Ensures it starts at the left edge */
+    width: 100%; /* Makes sure it spans the full width */
+    z-index: 1000; /* Keeps it above other content */
+}
+
+header nav ul {
+    list-style-type: none; /* Removes list style */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    color: white;
+    padding: 15px 20px;
+    display: block;
+}
+
+header nav ul li a:hover {
+    background-color: #575757; /* Background color on hover */
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Search bar styles */
+#searchBar {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 30px 0 0 30px; /* Rounded edges for the left */
+    outline: none;
+    width: 200px;
+    transition: all 0.3s ease;
+    margin-left: 20px; /* Adjusted to give space from the navigation items */
+}
+
+#searchButton {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-left: none;
+    border-radius: 0 30px 30px 0; /* Rounded edges for the right side */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+#home {
+    padding: 0;
+    margin: 0;
+    height: 100vh; 
+    background-color: #000; 
+    overflow: hidden;
+    position: relative; /* Ensure the children are positioned relative to this section */
+}
+
+.home-content {
+    position: absolute; /* Position it absolutely within the section */
+    top: 50%; /* Move it down to the center */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to truly center it */
+    text-align: center; /* Center the text horizontally */
+    color: #ffffff; /* Set text color to white for visibility */
+    z-index: 1; /* Ensure it appears above the canvas */
+    padding: 20px; /* Add some padding */
+    animation: fadeIn 2s; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%); /* Start slightly higher */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%); /* End at the center */
+    }
+}
+
+.home-content h1 {
+    font-size: 3.5em; /* Increase the font size */
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), /* Soft white glow */
+                 0 0 20px rgba(0, 0, 0, 0.6); /* Darker shadow for depth */
+    letter-spacing: 2px; /* Add space between letters for elegance */
+    transform: translateY(-10px); /* Slight lift effect */
+    animation: float 3s infinite alternate; /* Floating animation */
+}
+
+@keyframes float {
+    from {
+        transform: translateY(-10px); /* Lifted effect */
+    }
+    to {
+        transform: translateY(10px); /* Slight drop */
+    }
+}
+
+.home-content p {
+    font-size: 1.5em; /* Increase font size for paragraph */
+    color: #f0f0f0; /* Slightly off-white for contrast */
+    line-height: 1.6; /* Increase line height for readability */
+    max-width: 800px; /* Limit the width of the paragraph */
+    margin: 0 auto; /* Center the paragraph */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), /* Soft white glow */
+                 0 0 15px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    transform: translateY(-5px); /* Slight lift effect */
+    animation: fadeIn 2s forwards, float 3s infinite alternate; /* Combined animations */
+}
+
+/* Code block styles */
+#intro pre, #firstProgram pre, #JavaSyn pre,
+#DataT pre, #IfStatemnts pre, #Switch pre, #Loops pre, 
+#ClassObjects pre, #Inheritance pre, #SuperKeyword pre, 
+#Polymorphism pre, #Encapsulation pre, #Abstract pre,
+#Exception pre, #CollectionsFrame pre, #FileHandling pre, 
+#Multithreading pre, #Built-in pre, #DateandTime pre, 
+#Networking pre, #IntroSwing pre, #WindowsJJFrame pre,
+#AddingComponents pre, #EventHandling pre, #LayoutManagers pre,
+#JavaFX pre, #ConnectDatabase pre, #SQLQueries pre,
+#ResultSets pre, #PreSatatements pre, #TransaManagement pre,
+#IntroServlets pre, #IntroJSP pre, #WebDeployment pre,
+#DesignPattern pre, #Microservices pre, #UnitTesting pre,
+#Modules pre {
+    background-color: #2e2e2e; /* Black background for code block */
+    color: #f8f8f2; /* Light text color */
+    border: 1px solid #444; /* Darker border around the code block */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the code block */
+    overflow-x: auto; /* Horizontal scrolling if needed */
+    font-size: 1em; /* Font size for the code block */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    width: calc(100% - 40px); /* Reduce width slightly */
+    margin-right: 30px; /* Add space on the right side */
+}
+
+#intro code, #firstProgram code, #JavaSyn code,
+#DataT code, #IfStatemnts code, #Switch code, #Loops code, 
+#ClassObjects code, #Inheritance code, #SuperKeyword code, 
+#Polymorphism code, #Encapsulation code, #Abstract code, 
+#Exception code, #CollectionsFrame code, #FileHandling code, 
+#Multithreading code, #Built-in code, #DateandTime code, 
+#Networking code, #IntroSwing code, #WindowsJJFrame code,
+#AddingComponents code, #EventHandling code, #LayoutManagers code,
+#JavaFX code, #ConnectDatabase code, #SQLQueries code,
+#ResultSets code, #PreSatatements code, #TransaManagement code,
+#IntroServlets code, #IntroJSP code, #WebDeployment code,
+#DesignPattern code, #Microservices code, #UnitTesting code,
+#Modules code {
+    background-color: transparent; /* Ensure no additional background color */
+    color: inherit; /* Dark text color for contrast */
+    font-size: inherit; /* Inherit font size from pre */
+}
+
+/* Responsive image styles */
+.responsive-image, {
+    width: 80%; /* Change this value as needed */
+    height: auto; /* Maintains aspect ratio */
+}
+#IntJavaSyn img{
+	width: 100%; /* Change this value as needed */
+    height: 350px; /* Maintains aspect ratio */
+}
+.chapter-cover {
+    background-color: #F0FAFF; /* Dark background for the chapter cover */
+    color: #f8f8f2; /* Light text color */
+    padding: 20px; /* Padding around the text */
+    margin: 20px 0; /* Margin above and below the chapter cover */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.chapter-title {
+    font-size: 2.5em; /* Large font size for chapter title */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    margin: 0; /* Remove default margin */
+	color:black;
+}
+
+/* Style for the section content */
+#Control, #IntJavaSyn, #AdancedJC, #Chapter5, #Chapter6, #WorkDataBases, #WebDevelopment, #AdvanceTopics{
+    padding: 15px; /* Padding around the section */
+    background-color: #F0FAFF; /* Light background for the section */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px; /* Margin around the section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+	min-height: 700px;
+}
+#Control p,li, #IntJavaSyn p,li, #AdancedJC p,li, #Chapter5 p,li, #Chapter6 p,li, #WorkDataBases p,li, #WebDevelopment p,li, #AdvanceTopics p, li{
+	font-size: 16px;
+}
+
+/* CSS Code */
+textarea {
+    width: 100%;
+    height: 200px;
+    font-family: monospace;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+pre {
+    background-color: #272822;
+    color: white;
+    padding: 10px;
+    font-family: monospace;
+}
+
+
+/* Main content styles */
+main {
+    display: flex;
+    flex: 1;
+    margin-top: 60px; /* Space for the header */
+    padding-bottom: 60px; /* Space for the footer */
+}
+
+aside {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 250px;
+    bottom: 60px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+aside ul {
+    list-style-type: none; /* Removes bullets */
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Content area styles */
+.content {
+    margin-left: 350px; /* Space for the fixed sidebar */
+    padding: 15px;
+    flex: 1;
+    overflow: hidden; /* Ensures content does not overflow */
+}
+section {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none; /* To hide content initially */
+}
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Fixes footer at the bottom */
+}
+/* Responsive design for various screen sizes */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column; /* Stacks navigation items */
+        align-items: center; /* Centers navigation items */
+    }
+
+    .content {
+        margin-left: 0; /* Removes sidebar space on small screens */
+        padding: 15px; /* Consistent padding */
+    }
+
+    aside {
+        position: static; /* Static positioning on small screens */
+        width: 100%; /* Full width for sidebar */
+        box-shadow: none; /* Removes shadow */
+    }
+
+    #searchBar {
+        width: 100%; /* Full width on small screens */
+        margin-left: 0; /* Removes left margin */
+        border-radius: 0; /* No rounded corners */
+    }
+
+    #searchButton {
+        border-radius: 0; /* No rounded corners */
+        width: 100%; /* Full width */
+    }
+}
